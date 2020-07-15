@@ -6,4 +6,11 @@
 //  Copyright © 2563 Supanut LDM. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+extension UIStoryboard {
+    static func loadViewController<T>() -> T where T: StoryboardLoadable, T: UIViewController {
+        return UIStoryboard(name: T.storyboardName(), bundle: nil)
+            .instantiateViewController(withIdentifier: T.storyboardIdentifier()) as? T ?? T()
+    }
+}
