@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  VIPER_pattern
 //
 //  Created by Supanut Laddayam on 15/7/2563 BE.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController, StoryboardLoadable {
+    var presenter: HomePresenterInterface?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
 
+extension HomeViewController: HomeViewInterface {
+}
